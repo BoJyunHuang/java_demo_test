@@ -40,7 +40,7 @@ public class BankTest {
 	@Test
 	public void depositTest() {
 		Bank oldBank = bankDao.save(new Bank("AA999", "AA123456@", 2000)); // 測試用
-		Bank newBank = new Bank("AA999", "AA123456@", 3000);
+		Bank newBank = new Bank("AA999", "AA132456@", 3000);
 		BankResponse response = bankService.deposit(newBank); // 存款
 		// 斷言，確認存款成功與否
 		Assert.isTrue(response.getBank().getAmount() == (oldBank.getAmount() + newBank.getAmount()), "存款失敗!"); 

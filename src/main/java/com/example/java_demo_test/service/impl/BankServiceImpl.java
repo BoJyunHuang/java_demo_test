@@ -31,7 +31,7 @@ public class BankServiceImpl implements BankService {
 		}
 		return true; // 符合型式回傳true
 	}
-	
+
 	// 比對帳號密碼正確與否的方法
 	private BankResponse compareInfo(Bank bank) {
 		if (bank == null || !StringUtils.hasText(bank.getAccount()) || !StringUtils.hasText(bank.getPassword())
@@ -42,7 +42,7 @@ public class BankServiceImpl implements BankService {
 		if (resBank == null) { // 若尋找不到，回傳new Bank()
 			return new BankResponse(new Bank(), "資料不存在!");
 		}
-		return new BankResponse(resBank,"OK"); // 回傳正確帳號
+		return new BankResponse(resBank, "OK"); // 回傳正確帳號
 	}
 
 	@Override
@@ -81,22 +81,30 @@ public class BankServiceImpl implements BankService {
 
 	@Override
 	public BankResponse deposit(Bank bank) {
-		BankResponse response = compareInfo(bank); // 比對帳號密碼的方法
-		Bank resBank = response.getBank(); // 抓出比對結果
-		int newAmount = resBank.getAmount() + bank.getAmount(); // 加總=舊資料庫餘額+存款金額
-		resBank.setAmount(newAmount); // 更新舊資料庫存款金額
-		return new BankResponse(bankDao.save(resBank),"存款成功!"); // 更新bank資訊
+		BankResponse result = compareInfo(bank); // 比對帳號密碼的方法
+		if (result.getMessage() != "OK") { // 判定比較結果
+			return result;
+		} else {
+			Bank resBank = result.getBank(); // 抓出比對結果
+			int newAmount = resBank.getAmount() + bank.getAmount(); // 加總=舊資料庫餘額+存款金額
+			resBank.setAmount(newAmount); // 更新舊資料庫存款金額
+			return new BankResponse(bankDao.save(resBank), "存款成功!"); // 更新bank資訊
+		}
 	}
 
 	@Override
 	public BankResponse withdraw(Bank bank) {
-		BankResponse response = compareInfo(bank); // 比對帳號密碼的方法
-		if (bank.getAmount() > response.getBank().getAmount()) { // 提款不能大於存款
-			return new BankResponse(new Bank(), "提款金額大於餘額!");
+		BankResponse result = compareInfo(bank); // 比對帳號密碼的方法
+		if (result.getMessage() != "OK") { // 判定比較結果
+			return result;
+		} else {
+			if (bank.getAmount() > result.getBank().getAmount()) { // 提款不能大於存款
+				return new BankResponse(new Bank(), "提款金額大於餘額!");
+			}
+			int newAmount = result.getBank().getAmount() - bank.getAmount(); // 加總=舊資料庫餘額+存款金額
+			result.getBank().setAmount(newAmount); // 更新舊資料庫存款金額
+			return new BankResponse(bankDao.save(result.getBank()), "提款成功!"); // 更新bank資訊
 		}
-		int newAmount = response.getBank().getAmount() - bank.getAmount(); // 加總=舊資料庫餘額+存款金額
-		response.getBank().setAmount(newAmount); // 更新舊資料庫存款金額
-		return new BankResponse(bankDao.save(response.getBank()), "提款成功!"); // 更新bank資訊
 	}
 
 }
