@@ -44,4 +44,9 @@ public class OrderController {
 	public OrderResponse order(@RequestBody OrderRequest request) {
 		return orderService.order(request.getOrderMap());
 	}
+	
+	@GetMapping(value = "revise_menu")
+	public OrderResponse updateMenuPrice(@RequestBody OrderRequest request) {
+		return orderService.updateMenuPrice(request.getMenuList());
+	}
 }

@@ -12,6 +12,7 @@ public class OrderRequest {
 	private Menu menu;
 	@JsonProperty("menu_list")
 	private List<Menu> menuList;
+	@JsonProperty("order_map")
 	private Map<String, Integer> orderMap;
 
 	public String getName() {

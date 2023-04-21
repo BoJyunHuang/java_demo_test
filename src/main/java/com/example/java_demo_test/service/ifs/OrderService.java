@@ -22,4 +22,7 @@ public interface OrderService {
 	
 	// ÂIÀ\
 	public OrderResponse order(Map<String, Integer> orderMap);
+
+	// ­×§ïµæ³æ
+	public OrderResponse updateMenuPrice(List<Menu> menuList);
 }

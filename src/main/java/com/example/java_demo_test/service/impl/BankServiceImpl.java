@@ -20,31 +20,6 @@ public class BankServiceImpl implements BankService {
 	@Autowired
 	private BankDao bankDao;
 
-	// 檢查欄位資訊正確與否的方法
-	private boolean checkInfo(String info, String item, String pattern) {
-		if (item == null) { // 該欄位不得為空
-			System.out.println(info + "為空!");
-			return false;
-		} else if (!item.matches(pattern)) { // 欄位資訊不符合型式
-			System.out.println(info + "型式不符合規定!");
-			return false;
-		}
-		return true; // 符合型式回傳true
-	}
-
-	// 比對帳號密碼正確與否的方法
-	private BankResponse compareInfo(Bank bank) {
-		if (bank == null || !StringUtils.hasText(bank.getAccount()) || !StringUtils.hasText(bank.getPassword())
-				|| bank.getAmount() <= 0) { // 檢查輸入物件是否為空
-			return new BankResponse(new Bank(), "帳號/密碼錯誤!");
-		}
-		Bank resBank = bankDao.findByAccountAndPassword(bank.getAccount(), bank.getPassword()); // 尋找物件是否存在倉庫
-		if (resBank == null) { // 若尋找不到，回傳new Bank()
-			return new BankResponse(new Bank(), "資料不存在!");
-		}
-		return new BankResponse(resBank, "OK"); // 回傳正確帳號
-	}
-
 	@Override
 	public void addInfo(Bank bank) {
 		// 資料防呆
@@ -105,6 +80,31 @@ public class BankServiceImpl implements BankService {
 			result.getBank().setAmount(newAmount); // 更新舊資料庫存款金額
 			return new BankResponse(bankDao.save(result.getBank()), "提款成功!"); // 更新bank資訊
 		}
+	}
+
+	// 檢查欄位資訊正確與否的方法
+	private boolean checkInfo(String info, String item, String pattern) {
+		if (item == null) { // 該欄位不得為空
+			System.out.println(info + "為空!");
+			return false;
+		} else if (!item.matches(pattern)) { // 欄位資訊不符合型式
+			System.out.println(info + "型式不符合規定!");
+			return false;
+		}
+		return true; // 符合型式回傳true
+	}
+
+	// 比對帳號密碼正確與否的方法
+	private BankResponse compareInfo(Bank bank) {
+		if (bank == null || !StringUtils.hasText(bank.getAccount()) || !StringUtils.hasText(bank.getPassword())
+				|| bank.getAmount() <= 0) { // 檢查輸入物件是否為空
+			return new BankResponse(new Bank(), "帳號/密碼錯誤!");
+		}
+		Bank resBank = bankDao.findByAccountAndPassword(bank.getAccount(), bank.getPassword()); // 尋找物件是否存在倉庫
+		if (resBank == null) { // 若尋找不到，回傳new Bank()
+			return new BankResponse(new Bank(), "資料不存在!");
+		}
+		return new BankResponse(resBank, "OK"); // 回傳正確帳號
 	}
 
 }

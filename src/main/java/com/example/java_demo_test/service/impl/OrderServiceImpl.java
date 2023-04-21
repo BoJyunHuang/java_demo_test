@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
+import com.example.java_demo_test.entity.Bank;
 import com.example.java_demo_test.entity.Menu;
 import com.example.java_demo_test.repository.MenuDao;
 import com.example.java_demo_test.service.ifs.OrderService;
@@ -49,54 +50,114 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public OrderResponse getOneMenu(String name) {
+		if (!StringUtils.hasText(name)) {
+			return new OrderResponse("輸入錯誤!!");
+		}
 		Optional<Menu> item = menuDao.findById(name);
-		if (item.isEmpty()) {
+		if (!item.isPresent()) {
 			return new OrderResponse("無此餐點!");
 		}
-		Menu target = new Menu();
-		target.setName(name);
-		target.setPrice(item.get().getPrice());
-		return new OrderResponse(target, "取得餐點成功");
+		return new OrderResponse(item.get(), "成功!");
 	}
-	
+
 	@Override
 	public GetMenuResponse getMenuByName(String name) {
+		if (!StringUtils.hasText(name)) {
+			return new GetMenuResponse("輸入錯誤!!");
+		}
 		Optional<Menu> item = menuDao.findById(name);
-		if (item.isEmpty()) {
+		if (!item.isPresent()) {
 			return new GetMenuResponse("無此餐點!");
 		}
-		Menu target = new Menu();
-		target.setName(name);
-		target.setPrice(item.get().getPrice());
-		return new GetMenuResponse(target, "取得餐點成功");
+		return new GetMenuResponse(item.get(), "成功!");
 	}
 
 	@Override
 	public OrderResponse order(Map<String, Integer> orderMap) {
-		List<String> orderList = new ArrayList<>(); // 儲存Map中的數量正確的品項
-		int total = 0;
+		if (CollectionUtils.isEmpty(orderMap)) { // 防輸入為空，避免空跑及下面迴圈出錯
+			return new OrderResponse("輸入為空!");
+		}
 		Map<String, Integer> firmOrder = new HashMap<>(); // 儲存最後正確訂單
-		// 檢查輸入餐點正確與否
-		for (Entry<String, Integer> o : orderMap.entrySet()) {
-			if (o.getValue() < 0) { // 阻擋數量就好，餐點錯誤為空，不影響計價
+		int total = 0; // 總價格
+		//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//		// 方法一
+//		List<Menu> allMenuList = menuDao.findAll(); // 取得所有菜單
+//		for (Entry<String, Integer> o : orderMap.entrySet()) { // 找尋與確認訂單
+//			if (o.getValue() < 1) { // 排除錯誤
+//				return new OrderResponse("餐點數量錯誤!");
+//			}
+//			for (Menu m : allMenuList) { // 找尋對應餐點
+//				if (m.getName().equals(o.getKey())) { // 品項相同時
+//					int subTotal = m.getPrice() * o.getValue(); // 單一品項總價格
+//					total += subTotal; // 計算總價
+//					firmOrder.put(o.getKey(), o.getValue()); // 儲存訂單
+//				}
+//			}
+//		}
+		// 方法二
+		for (Entry<String, Integer> o : orderMap.entrySet()) { // 找尋與確認訂單
+			if (o.getValue() < 1) {
 				return new OrderResponse("餐點數量錯誤!");
 			}
-			orderList.add(o.getKey()); // 儲存餐點名稱
+			Optional<Menu> orderItem = menuDao.findById(o.getKey());
+			if (!orderItem.isPresent()) { // 無品項，則跳至迴圈繼續執行
+				continue;
+			}
+			int subTotal = orderItem.get().getPrice() * o.getValue(); // 單一品項總價格
+			total += subTotal; // 計算總價
+			firmOrder.put(o.getKey(), o.getValue()); // 儲存訂單
 		}
-		List<Menu> result = menuDao.findAllById(orderList); // 尋找陣列中對應餐點
-		// 計算正確品項的價錢與總價錢
-		for (Menu r : result) {
-			for (Entry<String, Integer> o : orderMap.entrySet()) {
-				if (r.getName().equals(o.getKey())) { // 品項名稱相同時
-					int subTotal = r.getPrice() * o.getValue(); // 單一品項總價格
-					total += subTotal; // 計算總價
-					firmOrder.put(o.getKey(), o.getValue());
+		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		if (firmOrder.size() == 0) {
+			return new OrderResponse("查無菜單!");
+		}
+		total = total > 500 ? (int) (total * 0.9) : total; // 折扣
+		return new OrderResponse(firmOrder, total, "點餐成功!");
+
+	}
+
+	@Override
+	public OrderResponse updateMenuPrice(List<Menu> menuList) {
+		/*
+		 * 方法一 -- 較常用
+		 */
+		if (CollectionUtils.isEmpty(menuList)) { // 防輸入為空，避免空跑或迴圈出錯
+			return new OrderResponse("輸入為空!");
+		}
+		List<Menu> originalMenu = menuDao.findAll();
+		List<Menu> reviseMenu = new ArrayList<>();
+		for (Menu m : menuList) {
+			if (m.getPrice() < 0) { // 防呆
+				return new OrderResponse("價錢錯誤!");
+			}
+			for (Menu o : originalMenu) { // 找尋對應餐點
+				if (o.getName().equals(m.getName())) {
+					reviseMenu.add(m); // 紀錄修改菜單
 				}
 			}
 		}
-		total = total > 500 ? (int) (total * 0.9) : total;
-		return new OrderResponse(firmOrder, total, "點餐成功!");
-	}
+		return new OrderResponse(menuDao.saveAll(reviseMenu), "修改成功!");
 
+		/*
+		 * 方法二 -- 使用existsById()
+		 */
+//		if (CollectionUtils.isEmpty(menuList)) { // 防輸入為空，避免空跑或迴圈出錯
+//			return new OrderResponse("輸入為空!");
+//		}
+//		List<Menu> updateMenus = new ArrayList<>();
+//		for (Menu menu:menuList) {
+//			if (menu.getPrice()<1) {
+//				return new OrderResponse("價格錯誤!");
+//			}
+//			if (menuDao.existsById(menu.getName())) {
+//				updateMenus.add(menu);
+//			}
+//		}
+//		if (updateMenus.size() == 0) {
+//			return new OrderResponse("查無菜單!");
+//		}
+//		return new OrderResponse(menuDao.saveAll(updateMenus),"Successful!");
+
+	}
 
 }
