@@ -46,7 +46,7 @@ public class PersonInfoController {
 	
 	@GetMapping(value = "get_person_info_by_age_less_between")
 	public PersonInfoResponse getPersonInfoByAgeBetween(@RequestBody PersonInfoRequest request) {
-		return personInfoService.getPersonInfoByAgeBetween(request.getAge(),request.getAnotherAge());
+		return personInfoService.getPersonInfoByAgeBetween(request.getFromAge(),request.getToAge());
 	}
 
 	@GetMapping(value = "get_person_info_city_containing")
@@ -54,9 +54,9 @@ public class PersonInfoController {
 		return personInfoService.getPersonInfoCityContaining(request.getStr());
 	}
 
-	@GetMapping(value = "get_person_info_by_age_and_city_containing")
-	public PersonInfoResponse getPersonInfoByAgeAndCityContaining(@RequestBody PersonInfoRequest request) {
-		return personInfoService.getPersonInfoByAgeAndCityContaining(request.getAge(),request.getStr());
+	@GetMapping(value = "get_person_info_by_age_and_city_containing_order_by_age_desc")
+	public PersonInfoResponse getPersonInfoByAgeAndCityContainingOrderByAgeDesc(@RequestBody PersonInfoRequest request) {
+		return personInfoService.getPersonInfoByAgeAndCityContainingOrderByAgDesc(request.getAge(),request.getStr());
 	}
 
 }

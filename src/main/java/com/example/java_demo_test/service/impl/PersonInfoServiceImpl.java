@@ -98,15 +98,15 @@ public class PersonInfoServiceImpl implements PersonInfoService {
 	}
 
 	@Override
-	public PersonInfoResponse getPersonInfoByAgeBetween(int age, int age2) {
+	public PersonInfoResponse getPersonInfoByAgeBetween(int fromAge, int toAge) {
 		// (防呆)檢查參數:檢查輸入陣列是否為null 或 空
-		if (age < 0 || age2 < 0) {
+		if (fromAge < 0 || toAge < 0) {
 			return new PersonInfoResponse("輸入年齡不得為負!");
 		}
-		if (age > age2) {
+		if (fromAge > toAge) {
 			return new PersonInfoResponse("後輸入年齡要比前輸入年齡大!");
 		}
-		List<PersonInfo> res = personInfoDao.findTop3ByAgeBetweenOrderByAgeDesc(age, age2);
+		List<PersonInfo> res = personInfoDao.findTop3ByAgeBetweenOrderByAgeDesc(fromAge, toAge);
 		// 空資料
 		if (res.isEmpty()) {
 			return new PersonInfoResponse("搜索不到資料!");
@@ -131,12 +131,12 @@ public class PersonInfoServiceImpl implements PersonInfoService {
 	}
 
 	@Override
-	public PersonInfoResponse getPersonInfoByAgeAndCityContaining(int age, String str) {
+	public PersonInfoResponse getPersonInfoByAgeAndCityContainingOrderByAgDesc(int age, String str) {
 		// (防呆)檢查參數:檢查輸入陣列是否為null 或 空
 		if (!StringUtils.hasText(str) || age < 0) {
 			return new PersonInfoResponse("輸入資訊錯誤!");
 		}
-		List<PersonInfo> res = personInfoDao.findByAgeGreaterThanAndCityContaining(age, str);
+		List<PersonInfo> res = personInfoDao.findByAgeGreaterThanAndCityContainingOrderByAgeDesc(age, str);
 		// 空資料
 		if (res.isEmpty()) {
 			return new PersonInfoResponse("搜索不到資料!");

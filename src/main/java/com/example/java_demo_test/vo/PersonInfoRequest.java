@@ -11,8 +11,10 @@ public class PersonInfoRequest {
 	private String str;
 	private String id;
 	private int age;
-	@JsonProperty("another_age")
-	private int anotherAge;
+	@JsonProperty("from_age")
+	private int fromAge;
+	@JsonProperty("to_age")
+	private int toAge;
 	@JsonProperty("person_info")
 	private PersonInfo personInfo;
 	@JsonProperty("person_info_list") // 小駝峰轉其他命名方式時才需要加
@@ -50,12 +52,20 @@ public class PersonInfoRequest {
 		this.age = age;
 	}
 
-	public int getAnotherAge() {
-		return anotherAge;
+	public int getFromAge() {
+		return fromAge;
 	}
 
-	public void setAnotherAge(int anotherAge) {
-		this.anotherAge = anotherAge;
+	public void setFromAge(int fromAge) {
+		this.fromAge = fromAge;
+	}
+
+	public int getToAge() {
+		return toAge;
+	}
+
+	public void setToAge(int toAge) {
+		this.toAge = toAge;
 	}
 
 	public PersonInfo getPersonInfo() {

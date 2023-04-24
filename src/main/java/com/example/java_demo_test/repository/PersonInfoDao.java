@@ -11,7 +11,7 @@ import com.example.java_demo_test.vo.PersonInfoResponse;
 @Repository
 public interface PersonInfoDao extends JpaRepository<PersonInfo, String> { // <¸ê®Æ«¬ºA, primary keyªº«¬ºA>
 
-	// ¦Û©w¸q:·j´M¤j©ó¿é¤J±ø¥óªº¸ê®Æ
+	// ¦Û©w¸q:°òÂ¦¡A·j´M±ø¥ó
 	// 4.>
 	public List<PersonInfo> findByAgeGreaterThan(int age);
 
@@ -35,9 +35,9 @@ public interface PersonInfoDao extends JpaRepository<PersonInfo, String> { // <¸
 	public List<PersonInfo> findByAgeLessThanEqualOrderByAgeAsc(int age);
 
 	// 6.up> x >dwon ¥B¥Ñ¤j¨ì¤p ¥B¨ú«e3µ§
-	public List<PersonInfo> findTop3ByAgeBetweenOrderByAgeDesc(int age, int anotherAge);
+	public List<PersonInfo> findTop3ByAgeBetweenOrderByAgeDesc(int fromAge, int toAge);
 
-	// 8.¦~¬ö¤j©ó¥BCity¥]§t
-	public List<PersonInfo> findByAgeGreaterThanAndCityContaining(int age, String str);
+	// 8.¦~¬ö¤j©ó¥BCity¥]§t ¥B¦~ÄÖ¥Ñ¤j¨ì¤p
+	public List<PersonInfo> findByAgeGreaterThanAndCityContainingOrderByAgeDesc(int age, String str);
 
 }

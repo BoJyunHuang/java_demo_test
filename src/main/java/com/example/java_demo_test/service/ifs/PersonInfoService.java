@@ -24,11 +24,11 @@ public interface PersonInfoService {
 	public PersonInfoResponse getPersonInfoByAgeLessThanEqual(int age);
 
 	// 6.找出年紀介於輸入條件的所有個人資訊
-	public PersonInfoResponse getPersonInfoByAgeBetween(int age, int anotherAge);
+	public PersonInfoResponse getPersonInfoByAgeBetween(int fromAge, int toAge);
 
 	// 7.找出city包含某特定字眼的所有個人資訊
 	public PersonInfoResponse getPersonInfoCityContaining(String str);
 
-	// 8.找出年紀大於輸入條件以及city包含某特定字眼的所有個人資訊
-	public PersonInfoResponse getPersonInfoByAgeAndCityContaining(int age, String str);
+	// 8.找出年紀大於輸入條件以及city包含某特定字眼的所有個人資訊，且年齡由大排到小
+	public PersonInfoResponse getPersonInfoByAgeAndCityContainingOrderByAgDesc(int age, String str);
 }
