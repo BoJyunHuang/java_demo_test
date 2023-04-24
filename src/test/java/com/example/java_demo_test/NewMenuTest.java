@@ -40,16 +40,11 @@ public class NewMenuTest {
 	}
 	
 	@Test
-	public void registerTest() {
-		Login l = new Login("TK00001","00000000","³¯§µ¶¯",32,"°ª¶¯");
-		loginService.register(l);
-	}
-	
-	@Test
 	public void arrayTest() {
-		String t = "^(?=.*[!@#$%^&*+=])(?!.*\\s)[\\S]{8,12}$";
-		String s = "12345(678AA";
-		System.out.println(s.matches(t));
+		String t = "^(?=.*[\\S^\\w])[\\S]{8,12}$";
+		String t1 = "^(?=.*[\\p{Punct}])[\\S]{8,12}$";
+		String s = "123@45678AA";
+		System.out.println(s.matches(t1));
 	}
 	
 }

@@ -10,5 +10,9 @@ import com.example.java_demo_test.entity.Login;
 @Repository
 public interface LoginDao extends JpaRepository<Login, String>{
 	
+	// 確認帳密
+	public Login findByAccountAndPassword(String account,String password);
+	
+	// 尋找使用者
 	public List<Login> findByCityOrderByAgeDesc(String city);
 }

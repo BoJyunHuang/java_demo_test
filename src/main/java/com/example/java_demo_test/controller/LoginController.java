@@ -19,17 +19,17 @@ public class LoginController {
 	
 	@PostMapping(value = "register")
 	public LoginResponse register(@RequestBody LoginRequest request) {
-		return loginService.register(request.getLogin());
+		return loginService.register(request);
 	}
 	
 	@PostMapping(value = "activate")
 	public LoginResponse activate(@RequestBody LoginRequest request) {
-		return loginService.activate(request.getLogin());
+		return loginService.activate(request.getAccount(),request.getPassword());
 	}
 	
 	@GetMapping(value = "sign_in")
 	public LoginResponse signIn(@RequestBody LoginRequest request) {
-		return loginService.signIn(request.getLogin());
+		return loginService.signIn(request.getAccount(),request.getPassword());
 	}
 	
 	@GetMapping(value = "find_users_by_city")

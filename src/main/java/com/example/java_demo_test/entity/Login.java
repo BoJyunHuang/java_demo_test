@@ -7,8 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.example.java_demo_test.vo.LoginRequest;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 @Entity
 @Table(name = "login")
+@JsonInclude(JsonInclude.Include.NON_NULL) // 不顯示值為null的key 和 value
 public class Login {
 	
 	@Id
@@ -28,7 +32,7 @@ public class Login {
 	private String city;
 	
 	@Column(name = "register_time")
-	private LocalDateTime registerTime;
+	private LocalDateTime registerTime =LocalDateTime.now();
 	
 	@Column(name = "active")
 	private boolean isActive; // 布林命名，加上is比較容易辨識(開發工程師的好習慣)
@@ -36,7 +40,7 @@ public class Login {
 	public Login() {
 		super();
 	}
-	
+
 	public Login(String account, String password, String name, int age, String city) {
 		super();
 		this.account = account;
