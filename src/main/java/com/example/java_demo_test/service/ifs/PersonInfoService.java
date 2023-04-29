@@ -2,8 +2,8 @@ package com.example.java_demo_test.service.ifs;
 
 import java.util.List;
 
+
 import com.example.java_demo_test.entity.PersonInfo;
-import com.example.java_demo_test.vo.PersonInfoRequest;
 import com.example.java_demo_test.vo.PersonInfoResponse;
 
 public interface PersonInfoService {
@@ -31,4 +31,5 @@ public interface PersonInfoService {
 
 	// 8.找出年紀大於輸入條件以及city包含某特定字眼的所有個人資訊，且年齡由大排到小
 	public PersonInfoResponse getPersonInfoByAgeAndCityContainingOrderByAgDesc(int age, String str);
+
 }
