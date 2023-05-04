@@ -47,7 +47,18 @@ public interface PersonInfoDao extends JpaRepository<PersonInfo, String> { // <∏
 	@Transactional
 	@Modifying
 	@Query("update PersonInfo p set p.name = :newName where p.id = :newId")
-	public int updateNameById(
-			@Param("newId") String id,
-			@Param("newName") String name);
+	public int updateNameById(@Param("newId") String id, @Param("newName") String name);
+
+	// BaseDao¿≥•Œ
+	public List<PersonInfo> doQueryByAge(int age);
+
+	// BaseDao¿≥•Œ + ≠≠®Óµßº∆
+	public List<PersonInfo> doQueryByAge(int age, int limit);
+
+	// BaseDao¿≥•Œ + ≠≠®Óµßº∆ + §¿≠∂¨d∏ﬂ
+	public List<PersonInfo> doQueryByAge(int age, int limit, int startPosition);
+	
+	// doUpdate
+	@Transactional
+	public int updateAgeByName(String name, int age);
 }

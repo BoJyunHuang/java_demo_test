@@ -1,5 +1,7 @@
 package com.example.java_demo_test;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -7,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.example.java_demo_test.entity.Login;
 import com.example.java_demo_test.entity.NewMenu;
 import com.example.java_demo_test.entity.NewMenu2;
+import com.example.java_demo_test.entity.PersonInfo;
 import com.example.java_demo_test.repository.LoginDao;
 import com.example.java_demo_test.repository.NewMenu2Dao;
 import com.example.java_demo_test.repository.NewMenuDao;
@@ -57,4 +60,9 @@ public class NewMenuTest {
 		System.out.println(res);
 	}
 	
+	@Test
+	public void doQueryByAgeTest() {
+		List<PersonInfo> res = pDao.doQueryByAge(25);
+		System.out.println(res.size());
+	}
 }
