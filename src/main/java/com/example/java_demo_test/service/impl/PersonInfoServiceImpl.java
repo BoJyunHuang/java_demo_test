@@ -3,10 +3,10 @@ package com.example.java_demo_test.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
@@ -14,12 +14,13 @@ import org.springframework.util.StringUtils;
 import com.example.java_demo_test.entity.PersonInfo;
 import com.example.java_demo_test.repository.PersonInfoDao;
 import com.example.java_demo_test.service.ifs.PersonInfoService;
-import com.example.java_demo_test.vo.PersonInfoRequest;
 import com.example.java_demo_test.vo.PersonInfoResponse;
 
 @Service
 public class PersonInfoServiceImpl implements PersonInfoService {
 
+	private Logger logger = LoggerFactory.getLogger(getClass()); // slf4j
+	
 	@Autowired
 	private PersonInfoDao personInfoDao;
 
@@ -42,6 +43,7 @@ public class PersonInfoServiceImpl implements PersonInfoService {
 		// 3.檢查資料(id)是否已存在
 		PersonInfoResponse res = checkExistId(personInfoList, ids);
 		// 儲存資訊
+		logger.info("add ...");
 		return new PersonInfoResponse(personInfoDao.saveAll(res.getPersonInfoList()), res.getMessage());
 	}
 

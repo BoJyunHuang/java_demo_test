@@ -3,7 +3,6 @@ package com.example.java_demo_test.vo;
 import java.util.List;
 
 import com.example.java_demo_test.entity.Login;
-import com.fasterxml.jackson.annotation.JsonInclude;
 
 public class LoginResponse {
 

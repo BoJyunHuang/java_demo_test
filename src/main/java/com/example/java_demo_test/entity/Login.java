@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.example.java_demo_test.vo.LoginRequest;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 @Entity

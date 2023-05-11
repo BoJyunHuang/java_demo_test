@@ -19,6 +19,10 @@ dependencies {
 	// mysql-connector
 	implementation 'mysql:mysql-connector-java:8.0.31'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// Swagger
+	//implementation 'io.springfox:springfox-boot-starter:3.0.0'
+	// open api
+	implementation 'org.springdoc:springdoc-openapi-ui:1.7.0'
 }
 
 tasks.named('test') {

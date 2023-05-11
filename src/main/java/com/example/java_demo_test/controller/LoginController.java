@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.java_demo_test.entity.Login;
 import com.example.java_demo_test.service.ifs.LoginService;
 import com.example.java_demo_test.vo.LoginRequest;
 import com.example.java_demo_test.vo.LoginResponse;
@@ -17,7 +16,7 @@ public class LoginController {
 	@Autowired
 	private LoginService loginService;
 	
-	@PostMapping(value = "register")
+	@PostMapping(value = "register(Login)")
 	public LoginResponse register(@RequestBody LoginRequest request) {
 		return loginService.register(request);
 	}

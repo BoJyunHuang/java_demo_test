@@ -1,14 +1,11 @@
 package com.example.java_demo_test.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.java_demo_test.entity.PersonInfo;
 import com.example.java_demo_test.service.ifs.PersonInfoService;
 import com.example.java_demo_test.vo.PersonInfoRequest;
 import com.example.java_demo_test.vo.PersonInfoResponse;

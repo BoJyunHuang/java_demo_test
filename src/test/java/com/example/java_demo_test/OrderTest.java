@@ -11,22 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.Assert;
 
-import com.example.java_demo_test.entity.Bank;
 import com.example.java_demo_test.entity.Menu;
-import com.example.java_demo_test.entity.PersonInfo;
-import com.example.java_demo_test.repository.BankDao;
-import com.example.java_demo_test.repository.MenuDao;
-import com.example.java_demo_test.service.ifs.BankService;
 import com.example.java_demo_test.service.ifs.OrderService;
-import com.example.java_demo_test.vo.BankResponse;
 import com.example.java_demo_test.vo.OrderResponse;
-import com.example.java_demo_test.vo.PersonInfoResponse;
 
 @SpringBootTest(classes = JavaDemoTestApplication.class)
 public class OrderTest {
-
-	@Autowired
-	private MenuDao menuDao; // 引用介面，會自動導向實作類別
 
 	@Autowired
 	private OrderService orderService;

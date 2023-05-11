@@ -1,7 +1,5 @@
 package com.example.java_demo_test.vo;
 
-import com.example.java_demo_test.entity.Login;
-
 public class LoginRequest {
 
 	private String account;
