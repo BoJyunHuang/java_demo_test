@@ -1,6 +1,11 @@
 package com.example.java_demo_test.service.impl;
 
+import java.time.LocalTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -10,6 +15,7 @@ import com.example.java_demo_test.service.ifs.RegisterService;
 import com.example.java_demo_test.vo.RegisterRequest;
 import com.example.java_demo_test.vo.RegisterResponse;
 
+@EnableScheduling
 @Service
 public class RegisterServiceImpl implements RegisterService {
 
@@ -61,7 +67,8 @@ public class RegisterServiceImpl implements RegisterService {
 		}
 		return new RegisterResponse("success");
 	}
-
+	
+	@Cacheable(value="account", key="#account")
 	@Override
 	public RegisterResponse getRegTime(String account, String pwd) {
 		// 檢查帳號是否已存在(啟用)
@@ -88,6 +95,11 @@ public class RegisterServiceImpl implements RegisterService {
 		}
 		// 回傳註冊時間
 		return new RegisterResponse(res.getRegTime(), "success");
+	}
+
+	@Scheduled(cron = "0 * 14-16 * * *")
+	public void scheduleTest() {
+		System.out.println("now:" + LocalTime.now());
 	}
 
 }

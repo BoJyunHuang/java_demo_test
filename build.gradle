@@ -23,6 +23,13 @@ dependencies {
 	//implementation 'io.springfox:springfox-boot-starter:3.0.0'
 	// open api
 	implementation 'org.springdoc:springdoc-openapi-ui:1.7.0'
+	
+	// §Ö¨ú
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-cache
+	implementation 'org.springframework.boot:spring-boot-starter-cache'
+	// https://mvnrepository.com/artifact/com.github.ben-manes.caffeine/caffeine
+	implementation 'com.github.ben-manes.caffeine:caffeine'
+
 }
 
 tasks.named('test') {
