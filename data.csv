@@ -1,0 +1,301 @@
+title,detail,price,build_date
+rent_income,scooter,727024,2023-04-16
+maintenance_cost,A03,29498,2023-05-04
+vip_income,vip,505929,2023-02-15
+vip_income,vip,585427,2023-01-22
+maintenance_cost,C02,934672,2023-01-19
+maintenance_cost,A01,827848,2023-02-11
+rent_income,scooter,572350,2023-04-16
+vip_income,vip,682854,2023-05-06
+maintenance_cost,C03,952966,2023-03-06
+vip_income,vip,920643,2023-05-22
+vip_income,vip,462642,2023-02-15
+rent_income,scooter,409654,2023-03-25
+vip_income,vip,832884,2023-04-04
+vehicle_cost,suv,205488,2023-05-06
+vip_income,vip,846015,2023-05-01
+rent_income,scooter,68077,2023-05-12
+rent_income,ven,949893,2023-03-31
+vehicle_cost,heavy motorcycle,834226,2023-03-01
+vip_income,vip,285168,2023-01-14
+maintenance_cost,C01,377244,2023-03-30
+vip_income,vip,699630,2023-04-13
+rent_income,scooter,22618,2023-02-02
+maintenance_cost,A02,444251,2023-03-12
+maintenance_cost,C01,65492,2023-05-15
+vehicle_cost,scooter,853877,2023-03-02
+vehicle_cost,suv,218129,2023-02-19
+vip_income,vip,673004,2023-03-04
+vip_income,vip,619112,2023-01-21
+vehicle_cost,scooter,749408,2023-05-03
+vip_income,vip,859371,2023-04-11
+vip_income,vip,955943,2023-05-09
+rent_income,bike,780854,2023-05-07
+vip_income,vip,222989,2023-05-08
+vip_income,vip,754431,2023-05-09
+rent_income,ven,333452,2023-01-27
+rent_income,heavy motorcycle,821480,2023-03-29
+rent_income,ven,622996,2023-03-29
+rent_income,bike,351615,2023-05-13
+vip_income,vip,817816,2023-01-31
+rent_income,bike,774347,2023-01-15
+vehicle_cost,ven,49308,2023-01-20
+maintenance_cost,A03,534432,2023-05-07
+maintenance_cost,C01,785322,2023-01-10
+vip_income,vip,297868,2023-01-14
+vip_income,vip,411350,2023-05-14
+rent_income,suv,232024,2023-01-03
+vip_income,vip,446472,2023-01-08
+maintenance_cost,B01,156293,2023-01-23
+vehicle_cost,sedan,230802,2023-05-02
+maintenance_cost,B01,589117,2023-01-15
+vehicle_cost,bike,171642,2023-01-02
+maintenance_cost,A03,792672,2023-04-27
+maintenance_cost,B02,700769,2023-01-31
+vehicle_cost,heavy motorcycle,867554,2023-03-05
+vip_income,vip,123629,2023-05-21
+vip_income,vip,802901,2023-01-11
+rent_income,motorcycle,750004,2023-01-16
+vehicle_cost,ven,530483,2023-01-21
+maintenance_cost,B01,372327,2023-01-08
+vip_income,vip,920935,2023-02-20
+vip_income,vip,940325,2023-04-26
+vip_income,vip,812160,2023-03-03
+vip_income,vip,134171,2023-05-29
+rent_income,bike,154867,2023-04-08
+vehicle_cost,ven,898171,2023-05-23
+vip_income,vip,322538,2023-05-08
+vehicle_cost,motorcycle,530644,2023-05-14
+rent_income,ven,845243,2023-01-12
+maintenance_cost,C03,67212,2023-02-23
+rent_income,sedan,457934,2023-03-17
+rent_income,sedan,571615,2023-01-17
+maintenance_cost,B03,516892,2023-03-08
+vehicle_cost,sedan,961552,2023-02-05
+rent_income,heavy motorcycle,98153,2023-05-14
+vehicle_cost,suv,196089,2023-02-07
+vehicle_cost,suv,586229,2023-05-06
+vip_income,vip,682317,2023-02-15
+vehicle_cost,heavy motorcycle,434104,2023-02-01
+vip_income,vip,663773,2023-03-01
+rent_income,scooter,961829,2023-03-24
+maintenance_cost,B01,208288,2023-03-20
+vehicle_cost,motorcycle,905751,2023-05-06
+maintenance_cost,A01,979653,2023-01-23
+maintenance_cost,A01,237573,2023-03-27
+vip_income,vip,796611,2023-04-22
+rent_income,bike,74173,2023-05-05
+vehicle_cost,sedan,838283,2023-04-11
+vip_income,vip,63680,2023-01-12
+vip_income,vip,484700,2023-03-02
+rent_income,scooter,858739,2023-04-06
+vehicle_cost,suv,153147,2023-01-05
+vehicle_cost,scooter,569899,2023-03-01
+vip_income,vip,352229,2023-05-19
+maintenance_cost,C03,511276,2023-03-30
+maintenance_cost,C02,514360,2023-02-08
+vip_income,vip,246432,2023-03-28
+rent_income,suv,631360,2023-02-10
+maintenance_cost,C04,357578,2023-01-09
+rent_income,motorcycle,826804,2023-03-05
+vehicle_cost,bike,176300,2023-04-23
+maintenance_cost,B03,750417,2023-05-10
+vehicle_cost,heavy motorcycle,101298,2023-04-24
+rent_income,heavy motorcycle,69514,2023-03-01
+rent_income,bike,716299,2023-02-15
+rent_income,heavy motorcycle,672191,2023-02-04
+vehicle_cost,heavy motorcycle,104044,2023-01-09
+vip_income,vip,792349,2023-03-21
+vip_income,vip,328355,2023-02-26
+rent_income,motorcycle,242886,2023-03-23
+vehicle_cost,bike,342165,2023-01-23
+rent_income,motorcycle,418149,2023-03-20
+vehicle_cost,sedan,712276,2023-03-21
+rent_income,heavy motorcycle,351845,2023-05-26
+vip_income,vip,68658,2023-04-09
+maintenance_cost,C01,790572,2023-04-23
+rent_income,heavy motorcycle,915516,2023-02-07
+rent_income,scooter,926639,2023-05-24
+vehicle_cost,scooter,534045,2023-04-01
+maintenance_cost,B01,811527,2023-05-02
+rent_income,scooter,387704,2023-04-24
+maintenance_cost,A03,592741,2023-01-17
+rent_income,motorcycle,432108,2023-05-21
+vip_income,vip,105318,2023-02-05
+vehicle_cost,heavy motorcycle,770490,2023-03-03
+rent_income,sedan,105037,2023-02-20
+rent_income,bike,924035,2023-05-22
+rent_income,scooter,560206,2023-05-06
+vehicle_cost,bike,935432,2023-02-12
+rent_income,heavy motorcycle,799175,2023-01-18
+maintenance_cost,A03,697444,2023-05-29
+rent_income,sedan,900974,2023-04-23
+maintenance_cost,C01,81153,2023-04-24
+maintenance_cost,B03,619759,2023-05-29
+vip_income,vip,149228,2023-02-02
+maintenance_cost,C04,243307,2023-05-02
+vehicle_cost,heavy motorcycle,446207,2023-03-19
+vehicle_cost,ven,237198,2023-01-19
+vip_income,vip,954049,2023-03-24
+rent_income,motorcycle,922122,2023-04-25
+maintenance_cost,C01,89279,2023-04-05
+maintenance_cost,C04,262012,2023-03-03
+rent_income,sedan,990832,2023-04-05
+vehicle_cost,scooter,693272,2023-01-14
+maintenance_cost,C05,356735,2023-01-05
+vehicle_cost,scooter,475208,2023-01-09
+vehicle_cost,scooter,39808,2023-02-07
+rent_income,ven,583171,2023-03-10
+vip_income,vip,549888,2023-03-01
+vip_income,vip,280736,2023-04-25
+vehicle_cost,bike,589378,2023-01-24
+maintenance_cost,C02,665182,2023-01-18
+vehicle_cost,bike,395917,2023-04-22
+maintenance_cost,C01,50734,2023-04-13
+maintenance_cost,C01,844448,2023-02-05
+vip_income,vip,690857,2023-03-04
+maintenance_cost,A03,631837,2023-04-17
+vehicle_cost,motorcycle,537852,2023-01-16
+rent_income,ven,375231,2023-04-26
+vip_income,vip,765701,2023-05-03
+maintenance_cost,A02,906449,2023-03-22
+rent_income,heavy motorcycle,250057,2023-05-13
+rent_income,suv,784208,2023-03-02
+vip_income,vip,933878,2023-04-22
+rent_income,sedan,115680,2023-02-25
+vip_income,vip,523417,2023-01-18
+maintenance_cost,C03,990377,2023-04-17
+rent_income,sedan,888928,2023-04-09
+rent_income,heavy motorcycle,714325,2023-01-14
+vehicle_cost,heavy motorcycle,726878,2023-01-16
+rent_income,motorcycle,411818,2023-05-08
+maintenance_cost,A01,680815,2023-04-23
+maintenance_cost,A01,151196,2023-01-27
+rent_income,suv,508174,2023-05-22
+vehicle_cost,motorcycle,387284,2023-03-10
+rent_income,heavy motorcycle,796045,2023-03-10
+maintenance_cost,C01,7493,2023-01-02
+maintenance_cost,A03,560687,2023-02-28
+maintenance_cost,C04,679750,2023-01-24
+vip_income,vip,874396,2023-04-27
+rent_income,suv,895390,2023-04-19
+vehicle_cost,ven,516417,2023-01-31
+maintenance_cost,A01,415959,2023-04-08
+maintenance_cost,B02,571588,2023-03-25
+vehicle_cost,suv,302179,2023-01-24
+maintenance_cost,B03,104047,2023-03-17
+vip_income,vip,464948,2023-03-23
+vip_income,vip,917718,2023-03-29
+rent_income,scooter,86334,2023-04-21
+vehicle_cost,sedan,822248,2023-04-27
+maintenance_cost,A03,296910,2023-03-31
+maintenance_cost,B02,257679,2023-01-15
+vip_income,vip,76466,2023-01-15
+vip_income,vip,77079,2023-05-02
+maintenance_cost,A03,119240,2023-03-07
+vip_income,vip,452516,2023-05-21
+rent_income,motorcycle,258825,2023-02-13
+rent_income,heavy motorcycle,2859,2023-03-13
+maintenance_cost,B02,788355,2023-05-17
+rent_income,bike,555306,2023-01-20
+rent_income,bike,729874,2023-05-09
+vehicle_cost,heavy motorcycle,760200,2023-05-03
+vehicle_cost,suv,522343,2023-05-12
+maintenance_cost,B01,2351,2023-02-23
+vehicle_cost,scooter,42839,2023-01-26
+vip_income,vip,836636,2023-02-19
+maintenance_cost,C04,193566,2023-01-01
+vehicle_cost,suv,337388,2023-05-20
+rent_income,suv,36902,2023-01-28
+maintenance_cost,C01,975757,2023-03-04
+vehicle_cost,ven,300168,2023-05-17
+rent_income,sedan,618420,2023-01-06
+rent_income,scooter,449262,2023-03-16
+rent_income,suv,440023,2023-01-19
+vip_income,vip,941938,2023-05-24
+rent_income,sedan,512166,2023-04-16
+vehicle_cost,heavy motorcycle,793314,2023-05-22
+vehicle_cost,scooter,222420,2023-02-02
+vehicle_cost,motorcycle,594307,2023-05-09
+rent_income,sedan,790672,2023-04-01
+vehicle_cost,sedan,21168,2023-03-15
+rent_income,sedan,840350,2023-01-27
+rent_income,heavy motorcycle,602568,2023-04-15
+rent_income,motorcycle,489063,2023-05-25
+rent_income,suv,715406,2023-03-12
+vip_income,vip,682251,2023-02-05
+maintenance_cost,B01,760470,2023-02-28
+maintenance_cost,C02,470853,2023-02-03
+maintenance_cost,C01,638184,2023-03-11
+vehicle_cost,heavy motorcycle,238865,2023-04-05
+rent_income,sedan,285203,2023-02-13
+maintenance_cost,A03,614999,2023-02-27
+maintenance_cost,C02,165202,2023-05-28
+vip_income,vip,678976,2023-05-24
+vehicle_cost,ven,959948,2023-05-30
+rent_income,motorcycle,45337,2023-04-21
+vip_income,vip,277936,2023-03-12
+vehicle_cost,ven,944191,2023-04-30
+maintenance_cost,A03,913842,2023-04-28
+vip_income,vip,318222,2023-04-26
+vehicle_cost,suv,590027,2023-05-02
+maintenance_cost,C05,552022,2023-04-22
+rent_income,motorcycle,161228,2023-03-27
+maintenance_cost,C01,9684,2023-03-07
+rent_income,sedan,784670,2023-02-02
+vip_income,vip,463646,2023-03-08
+vehicle_cost,scooter,865558,2023-05-15
+vip_income,vip,849833,2023-04-04
+rent_income,scooter,59905,2023-04-24
+vehicle_cost,motorcycle,401941,2023-05-19
+vip_income,vip,902606,2023-05-17
+vehicle_cost,heavy motorcycle,837418,2023-04-25
+vip_income,vip,458843,2023-01-14
+maintenance_cost,B02,510136,2023-01-06
+maintenance_cost,C04,2108,2023-01-11
+rent_income,heavy motorcycle,458434,2023-02-14
+vehicle_cost,scooter,816876,2023-03-09
+vehicle_cost,sedan,490130,2023-05-01
+vip_income,vip,390257,2023-02-09
+rent_income,bike,558651,2023-04-22
+vehicle_cost,heavy motorcycle,43401,2023-03-16
+vip_income,vip,461895,2023-01-25
+vip_income,vip,59902,2023-02-16
+maintenance_cost,C02,632225,2023-02-01
+rent_income,ven,982767,2023-05-03
+vehicle_cost,sedan,943330,2023-01-18
+vip_income,vip,851180,2023-03-31
+rent_income,bike,525303,2023-01-03
+rent_income,scooter,416743,2023-04-06
+rent_income,suv,307011,2023-03-30
+vip_income,vip,151492,2023-01-07
+vehicle_cost,bike,802676,2023-03-28
+vehicle_cost,heavy motorcycle,666888,2023-02-27
+vehicle_cost,heavy motorcycle,372483,2023-01-28
+maintenance_cost,A03,185216,2023-05-18
+vip_income,vip,343263,2023-04-07
+maintenance_cost,C01,435275,2023-01-05
+vehicle_cost,scooter,816839,2023-02-16
+rent_income,ven,965271,2023-03-22
+vehicle_cost,ven,72633,2023-05-14
+vehicle_cost,heavy motorcycle,245465,2023-05-20
+vehicle_cost,motorcycle,640114,2023-03-07
+maintenance_cost,C02,653437,2023-03-02
+vip_income,vip,198583,2023-03-21
+vehicle_cost,heavy motorcycle,63520,2023-01-10
+vip_income,vip,726103,2023-02-15
+rent_income,bike,839331,2023-05-15
+maintenance_cost,A02,185644,2023-02-13
+vip_income,vip,82701,2023-02-11
+vip_income,vip,387241,2023-04-26
+rent_income,scooter,38656,2023-04-20
+vip_income,vip,794362,2023-05-24
+vehicle_cost,ven,249424,2023-01-10
+vehicle_cost,suv,744572,2023-04-19
+vehicle_cost,heavy motorcycle,224213,2023-03-12
+rent_income,scooter,589122,2023-05-29
+vehicle_cost,bike,761560,2023-01-22
+vehicle_cost,heavy motorcycle,771107,2023-01-25
+vehicle_cost,sedan,259833,2023-02-19
+vehicle_cost,suv,524707,2023-04-12
+vehicle_cost,heavy motorcycle,857993,2023-05-27

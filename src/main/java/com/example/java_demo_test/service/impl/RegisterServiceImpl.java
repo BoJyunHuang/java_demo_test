@@ -2,6 +2,8 @@ package com.example.java_demo_test.service.impl;
 
 import java.time.LocalTime;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -9,6 +11,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import com.example.java_demo_test.constants.RtnCode;
 import com.example.java_demo_test.entity.Register;
 import com.example.java_demo_test.repository.RegisterDao;
 import com.example.java_demo_test.service.ifs.RegisterService;
@@ -19,14 +22,19 @@ import com.example.java_demo_test.vo.RegisterResponse;
 @Service
 public class RegisterServiceImpl implements RegisterService {
 
+	// 取用logger，不需要Autowired，因為在resource
+	private Logger logger = LoggerFactory.getLogger(getClass()); // slf4j
+	
 	@Autowired
 	private RegisterDao registerDao;
-
+	
 	@Override
-	public RegisterResponse register(String account, String pwd) {
+	public RegisterResponse register(String account, String pwd) throws Exception{
 		// 防呆
 		if (!StringUtils.hasText(account) || !StringUtils.hasText(pwd)) {
-			return new RegisterResponse("incorrect");
+			logger.error("rigister error!");
+			throw new Exception(RtnCode.CANNOT_EMPTY.getCode() + RtnCode.CANNOT_EMPTY.getMessage());
+//			return new RegisterResponse("incorrect");
 		}
 		// 檢查帳號是否已存在
 		if (registerDao.existsById(account)) {

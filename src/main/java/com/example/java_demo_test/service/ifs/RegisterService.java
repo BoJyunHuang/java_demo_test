@@ -5,7 +5,7 @@ import com.example.java_demo_test.vo.RegisterResponse;
 
 public interface RegisterService {
 
-	public RegisterResponse register(String account, String pwd);
+	public RegisterResponse register(String account, String pwd) throws Exception;
 	
 	public RegisterResponse avtive(String account, String pwd);
 	

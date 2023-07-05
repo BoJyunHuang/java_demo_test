@@ -20,7 +20,7 @@ public class RegisterController {
 	private RegisterService registerService;
 
 	@PostMapping(value = "register")
-	public RegisterResponse register(@RequestBody RegisterRequest request) {
+	public RegisterResponse register(@RequestBody RegisterRequest request) throws Exception {
 		return registerService.register(request.getAccount(), request.getPwd());
 	}
 
